@@ -11,7 +11,7 @@
 	<div class="main-wrapper">
 
         <!-- Header -->
-        <?php include("inc/header.php"); ?>
+        <?php include("inc/header_final.php"); ?> 
         <div class="why-gamma-prep-wrapper">
             <div class="container">
                 <div class="loginbox">
@@ -45,7 +45,12 @@
                                             <input type="Password" id="conpass" name="password" class="form-control" required>
                                             <span id="msg2"></span>
                                         </div>
-                                        
+                                        <div class="form-group col-md-12">
+                                            <label class="ckbox">
+                                                <input type="checkbox" checked  required>
+                                                <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a></span>
+                                            </label>
+                                        </div>
                                         <div class="form-group col-md-6">
                                             <button type="button" onclick="subReg()" class="btn btn-primary btn-block">Register</button>
                                         </div>
@@ -62,7 +67,7 @@
         </div>
         
 
-        <?php include("inc/footer.php"); ?>
+        <?php include("inc/footer_final.php"); ?>
         <?php include("inc/js.php"); ?>
         <script type="text/javascript">
             function subReg()

@@ -151,9 +151,26 @@ class AdminPanelModel extends CI_Model
 		return $data;
 	}
 
+	public function get_plan_vid_folders($id)
+	{
+		$this->db->order_by("video_type","ASC");
+		$this->db->where(["subs_member"=>1,"plan_id"=>$id]);
+		$this->db->distinct();
+		$this->db->select("video_type");
+		$data = $this->db->get("videos")->result_array();
+		return $data;
+	}
+
 	public function get_all_video_by_type($video_type,$id)
 	{
 		$this->db->where(["prod_id"=>$id,"video_type"=>$video_type]);
+		$data = $this->db->get("videos")->result_array();
+		return $data;
+	}
+
+	public function get_all_planvideo_by_type($video_type,$id)
+	{
+		$this->db->where(["plan_id"=>$id,"video_type"=>$video_type]);
 		$data = $this->db->get("videos")->result_array();
 		return $data;
 	}
@@ -162,6 +179,34 @@ class AdminPanelModel extends CI_Model
 	{
 		$this->db->where(["prod_id"=>$id]);
 		$data = $this->db->get("videos")->result_array();
+		return $data;
+	}
+
+	public function check_video_exists($id)
+	{
+		$this->db->where(["prod_id"=>$id]);
+		$data = $this->db->get("videos")->num_rows();
+		return $data;
+	}
+
+	public function check_prod_plan_exists($prod_id,$plan_id)
+	{
+		$this->db->where(["prod_id"=>$prod_id,"plan_id"=>$plan_id]);
+		$chk = $this->db->get("plan_products")->num_rows();
+		return $chk;
+	}
+
+	public function get_unsubscribe_requests()
+	{
+		$this->db->order_by("id","DESC");
+		$data = $this->db->get("unsubs_paypal")->result_array();
+		return $data;
+	}
+
+	public function get_all_subscribers()
+	{
+		$this->db->order_by("id","DESC");
+		$data = $this->db->get("email_subscribers")->result_array();
 		return $data;
 	}
 }

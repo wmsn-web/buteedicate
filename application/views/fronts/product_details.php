@@ -13,7 +13,7 @@
 	<div class="main-wrapper">
 
         <!-- Header -->
-        <?php include("inc/header.php"); ?>
+        <?php include("inc/header_final.php"); ?> 
         <div class="why-gamma-prep-wrapper bg-white">
             <hr>
             <div class="container">
@@ -32,6 +32,10 @@
                         </ul>
                         <div class="text-left mt-5">
                             <?php if(!$this->session->userdata("userId")): ?>
+                                <label class="ckbox">
+                                    <input type="checkbox" checked  required>
+                                    <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a></span>
+                                </label><br>
                                 <a href="<?= base_url('Login'); ?>">
                                     <button class="btn btn-primary">Buynow</button>
                                 </a>
@@ -91,7 +95,7 @@
         </div>
         
 
-        <?php include("inc/footer.php"); ?>
+        <?php include("inc/footer_final.php"); ?>
     </div>
         <?php include("inc/js.php"); ?>
     <script type="text/javascript">

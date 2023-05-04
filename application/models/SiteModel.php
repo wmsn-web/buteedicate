@@ -172,4 +172,46 @@ class SiteModel extends CI_Model
 		$data = $this->db->get("online_meet_link")->row_array();
 		return $data;
 	}
+
+	public function get_main_video_by_slug($vid_slug)
+	{
+		$this->db->where("vid_slug",$vid_slug);
+		$data = $this->db->get("videos")->row_array();
+		return $data;
+	}
+
+	public function get_related_videos($prod_id,$video_type)
+	{
+		$this->db->where(["prod_id"=>$prod_id,"video_type"=>$video_type]);
+		$data = $this->db->get("videos")->result_array();
+		return $data;
+	}
+
+	public function get_related_planvideos($plan_id,$video_type)
+	{
+		$this->db->where(["plan_id"=>$plan_id,"video_type"=>$video_type]);
+		$data = $this->db->get("videos")->result_array();
+		return $data;
+	}
+
+	public function get_all_video_from_product($prod_id)
+	{
+		$this->db->where(["prod_id"=>$prod_id]);
+		$data = $this->db->get("videos")->result_array();
+		return $data;
+	}
+
+	public function get_all_video_from_plan($plan_id)
+	{
+		$this->db->where(["plan_id"=>$plan_id]);
+		$data = $this->db->get("videos")->result_array();
+		return $data;
+	}
+
+	public function check_videos_for_membership($id)
+	{
+		$this->db->where(["subs_member"=>1,"plan_id"=>$id]);
+		$data = $this->db->get("videos")->num_rows();
+		return $data;
+	}
 }

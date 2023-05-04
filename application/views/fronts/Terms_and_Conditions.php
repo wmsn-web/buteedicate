@@ -13,16 +13,30 @@
 	<div class="main-wrapper">
 
         <!-- Header -->
-        <?php include("inc/header.php"); ?>
-        <div class="why-gamma-prep-wrapper bg-white">
-            <div class="container">
-                <div class="common-title">
-                    <h3>Terms & Conditions</h3>
+        <?php include("inc/header_final.php"); ?> 
+        <section class="home_about">
+            <div class="container_65">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 text-center">
+                                <h3 class="home_about_heading">
+                                    Terms & Conditions
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+        <div class="why-gamma-prep-wrapper bg-white">
+            <div class="container_65">
                 <div class="gamma-block-wrap">
                     <div class="row">
                         <div class="col-md-12">
-                            <?= html_entity_decode($terms['trems_details']); ?>
+                            <div class="page_text">
+                                <?= html_entity_decode($terms['trems_details']); ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,7 +44,7 @@
         </div>
         
 
-        <?php include("inc/footer.php"); ?>
+        <?php include("inc/footer_final.php"); ?>
     </div>
         <?php include("inc/js.php"); ?>
     <script type="text/javascript">

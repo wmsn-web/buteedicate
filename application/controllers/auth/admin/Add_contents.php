@@ -190,6 +190,9 @@ class Add_contents extends CI_controller
 			if (!is_dir($dir_name)) {
 			mkdir($dir_name);
 		}
+		$vid_descr = $data['vid_descr'];
+		$adbr = str_replace(PHP_EOL, "<br>", $vid_descr);
+		$data['vid_descr'] = htmlentities($adbr);
 
 		$config['upload_path'] = './uploads/vid_thumb/';
         $config['max_size'] = '*';
@@ -197,6 +200,7 @@ class Add_contents extends CI_controller
 		$config['remove_spaces'] = TRUE;
 		$config['encrypt_name'] = false;
 		$this->load->library('upload', $config);
+
 
 		if (!$this->upload->do_upload('thumbnail'))
 		{
@@ -210,6 +214,52 @@ class Add_contents extends CI_controller
 			$this->db->insert("videos",$data);
 			$this->session->set_flashdata("Feed","Video link added Successfully");
 			return redirect(back());
+		}
+		
+	}
+
+	public function edit_video_link()
+	{
+		$data = $this->input->post();
+		$vid_descr = $data['vid_descr'];
+		$adbr = str_replace(PHP_EOL, "<br>", $vid_descr);
+		$data['vid_descr'] = htmlentities($adbr);
+
+		$dir_name ='./uploads/vid_thumb';
+			if (!is_dir($dir_name)) {
+			mkdir($dir_name);
+		}
+
+		$config['upload_path'] = './uploads/vid_thumb/';
+        $config['max_size'] = '*';
+		$config['allowed_types'] = 'jpg|png'; 
+		$config['remove_spaces'] = TRUE;
+		$config['encrypt_name'] = false;
+		$this->load->library('upload', $config);
+
+		if(empty($_FILES['thumbnail']['name']))
+		{
+			$this->db->where("id",$data['id']);
+			$this->db->update("videos",$data);
+			$this->session->set_flashdata("Feed","Video link updated Successfully");
+			return redirect(back());
+		}
+		else
+		{
+			if (!$this->upload->do_upload('thumbnail'))
+			{
+				$this->session->set_flashdata("err","Please Select a Image file!");
+				return redirect(back());
+			}
+			else
+			{
+				$fileData = $this->upload->data();
+				$data['thumbnail'] = $fileData['file_name'];
+				$this->db->where("id",$data['id']);
+				$this->db->update("videos",$data);
+				$this->session->set_flashdata("Feed","Video link updated Successfully");
+				return redirect(back());
+			}
 		}
 	}
 

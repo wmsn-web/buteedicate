@@ -8,12 +8,14 @@
     <meta name="keywords" content="gammaprep login">
     <link rel="canonical" href="https://www.gammaprep.com/Login">
 	<?php include("inc/layout.php"); ?>
+    
 </head>
 <body>
 	<div class="main-wrapper">
 
         <!-- Header -->
-        <?php include("inc/header.php"); ?>
+        <?php include("inc/header_final.php"); ?> 
+        
         <div class="why-gamma-prep-wrapper">
             <div class="container">
                 <div class="loginbox">
@@ -41,6 +43,12 @@
                                         </div>
                                         <div class="form-group col-md-12">
                                             <a onclick="showForgot()" href="javascript:void(0)">Forgot Password?</a>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label class="ckbox">
+                                                <input type="checkbox" checked  required>
+                                                <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a></span>
+                                            </label>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <button class="btn btn-primary btn-block">Login</button>
@@ -71,7 +79,7 @@
         </div>
         
 
-        <?php include("inc/footer.php"); ?>
+        <?php include("inc/footer_final.php"); ?>
         <?php include("inc/js.php"); ?>
         <script type="text/javascript">
             function showForgot()

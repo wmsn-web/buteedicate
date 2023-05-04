@@ -29,6 +29,10 @@ $route['my-account/ebooks/download/(:any)'] = "my-account/Ebooks/download/$1";
 $route['my-account/community/(:any)'] = "my-account/Community/index/$1";
 $route['my-account/my-subscription'] = "my-account/My_subscription";
 $route['my-account/Community/save_discord'] = "my-account/Community/save_discord";
+$route['my-account/course-videos/(:any)'] = "my-account/Course_videos/index/$1";
+$route['my-account/course-videos/play/(:any)'] = "my-account/Course_videos/play/$1";
+$route['my-account/premium-videos'] = "my-account/Premium_videos/index";
+$route['my-account/premium-videos/play/(:any)'] = "my-account/Premium_videos/play/$1";
 
 
 $route['membership-plans'] = "main/Membership_plans/index";

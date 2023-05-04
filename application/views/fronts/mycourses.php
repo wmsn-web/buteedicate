@@ -13,7 +13,7 @@
 	<div class="main-wrapper">
 
         <!-- Header -->
-        <?php include("inc/header.php"); ?>
+        <?php include("inc/header_final.php"); ?> 
         <div class="why-gamma-prep-wrapper bg-white">
             <div class="container">
                 <div class="row">
@@ -36,6 +36,9 @@
                                     <li><a href="<?= base_url('my-account'); ?>">My Account</a></li>
                                     <li><a href="<?= base_url('my-account/my-courses'); ?>">My Courses</a></li>
                                     <li><a href="<?= base_url('my-account/my-subscription'); ?>">My Subscription</a></li>
+                                    <?php if($chk_vid > 0): ?>
+                                        <li><a href="<?= base_url('my-account/premium-videos'); ?>">Premium Videos</a></li>
+                                    <?php endif; ?>
                                     <li><a href="<?= base_url('transactions'); ?>">Transactions</a></li>
                                     <li><a href="<?= base_url('Change_password'); ?>">Change Password</a></li>
                                 </ul>
@@ -67,7 +70,7 @@
         </div>
         
 
-        <?php include("inc/footer.php"); ?>
+        <?php include("inc/footer_final.php"); ?>
         <?php include("inc/js.php"); ?>
         
     </div>

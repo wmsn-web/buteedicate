@@ -78,4 +78,56 @@ class Unsubscription extends CI_controller
 		}
 		
 	}
+
+	public function paypal()
+	{
+		$data = $this->input->post();
+		$data['status'] = 0;
+
+		$this->db->where("email",$data['email']);
+		$gt = $this->db->get("users");
+		if($gt->num_rows() == 0)
+		{
+			$this->session->set_flashdata("errMsgUn","Email Address not registered with us. Please enter Registered Email Address.");
+			return redirect(back());
+		}
+		else
+		{
+			$row = $gt->row();
+			$this->db->where("user_id",$row->id);
+			$sub = $this->db->get("user_subscriptions")->num_rows();
+			if($sub == 0)
+			{
+				$this->session->set_flashdata("errMsgUn","You don't have any subscription!");
+				return redirect(back());
+			}
+			else
+			{
+				$this->db->where($data);
+				$chk = $this->db->get("unsubs_paypal")->num_rows();
+				if($chk > 0)
+				{
+					$this->session->set_flashdata("errMsgUn","Request already exists!");
+					return redirect(back());
+				}
+				else
+				{
+					$this->db->insert("unsubs_paypal",$data);
+					$this->session->set_flashdata("succMsgUn","Request sent successfully. You will be notified by email with unsubscription confirmation within 48 hours.");
+					return redirect(back());
+				}
+			}
+		}
+
+				
+	}
+
+	public function emailx()
+	{
+		$data = $this->input->post();
+		$this->db->where($data);
+		$this->db->delete("email_subscribers");
+		$this->session->set_flashdata("succMsgUn","Unsibscribed successfully.");
+		return redirect(back());
+	}
 }

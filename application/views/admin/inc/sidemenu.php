@@ -41,6 +41,9 @@
 							
 						</ul>
 					</li>
+					<li class="slide">
+						<a class="side-menu__item" href="<?= base_url('auth/admin/Subscribers'); ?>"><i class="side-menu__icon fas fa-flag"></i><span class="side-menu__label">Subscribers</span></a>
+					</li>
 					<li><h3>Account</h3></li>
 					<li class="slide">
 						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-trending-up menu-icon"></i><span class="side-menu__label">Sale</span><i class="angle fe fe-chevron-down"></i></a>
@@ -54,10 +57,10 @@
 						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-trending-up menu-icon"></i><span class="side-menu__label">Requests</span><i class="angle fe fe-chevron-down"></i></a>
 						<ul class="slide-menu">
 							<li><a class="slide-item" href="<?= base_url('auth/admin/Meeting_requests'); ?>">Meeting Requests</a></li>
-						</ul>
-						<ul class="slide-menu">
 							<li><a class="slide-item" href="<?= base_url('auth/admin/Discord_requests'); ?>">Discord Requests</a></li>
+							<li><a class="slide-item" href="<?= base_url('auth/admin/Unsubscribe_requests'); ?>">Unsubscribe Requests</a></li>
 						</ul>
+						
 					</li>
 					
 					

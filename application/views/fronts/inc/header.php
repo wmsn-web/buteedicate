@@ -4,7 +4,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg gamma-header">
                     <a href="<?= base_url(); ?>" class="navbar-brand custom-logo">
-                        <img src="<?= base_url(); ?>assets/img/logo2.png" alt="Logo">
+                        <img src="<?= base_url('assets/img/baner/footerlogo.png'); ?>" alt="Logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="login-button">
                                     <a href="<?= base_url('Register'); ?>" class="">Sign Up</a>
-                                </div>
+                                </div> 
                             <?php endif; ?>
                         </div>
                         <ul class="navbar-nav">

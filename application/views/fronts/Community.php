@@ -13,7 +13,7 @@
 	<div class="main-wrapper">
 
         <!-- Header -->
-        <?php include("inc/header.php"); ?>
+        <?php include("inc/header_final.php"); ?> 
         <div class="why-gamma-prep-wrapper bg-white">
             <div class="container">
                 <div class="row">
@@ -29,23 +29,21 @@
                                     
                                 </div>
                                 <p class="mt-5"><?= html_entity_decode($prods['descr']); ?> </p>
-                                <b>Contents</b>
                                 <ul class="profile_links mt-5">
-                                    <li>
-                                        <a href="<?= base_url('my-account/my-courses'); ?>">My Courses</a>
-                                    </li>
+                                    <li><b>Contents</b></li>
                                     <?php if(!empty($ebooks)): ?>
                                         <li><a href="<?= base_url('my-account/ebooks/'.urlencode(base64_encode($prods['prod_slug']))); ?>">Ebooks</a></li>
                                     <?php endif; ?>
-                                    <?php if(!empty($discord_links)): ?>
+                                    <?php if($prods['community_access']==1): ?>
                                         <li><a href="<?= base_url('my-account/community/'.urlencode(base64_encode($prods['prod_slug']))); ?>">Community Access</a></li>
                                     <?php endif; ?>
-                                    <?php if(!empty($prods['online_links'])): ?>
-                                        <li><a target="_blank" href="<?= $prods['online_links']; ?>">Online Meeting Link</a></li>
-                                    <?php endif; ?>
                                     <?php if(!empty($prods['saminar_day'])): ?>
-                                        <li><a target="_blank" href="<?= $prods['saminar_link']; ?>">12 Seminar Link</a></li>
+                                        <li><a href="<?= base_url('my-account/seminars/'.urlencode(base64_encode($prods['prod_slug']))); ?>">12 Seminar link</a></li>
                                     <?php endif; ?>
+                                    <?php if($vids > 0): ?>
+                                        <li><a href="<?= base_url('my-account/course-videos/'.urlencode(base64_encode($prods['prod_slug']))); ?>">Course Videos</a></li>
+                                    <?php endif; ?>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -91,7 +89,7 @@
         </div>
         
 
-        <?php include("inc/footer.php"); ?>
+        <?php include("inc/footer_final.php"); ?>
         <?php include("inc/js.php"); ?>
         <script type="text/javascript">
             function get_books(language,prod_id)

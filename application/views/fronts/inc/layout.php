@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/all.min.css">
 
     <!-- Animation CSS -->
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/aos.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/animate.css">
 
     <link href="<?= base_url(); ?>admin_assets/plugins/datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
         <link href="<?= base_url(); ?>admin_assets/plugins/datatable/css/buttons.bootstrap4.min.css" rel="stylesheet">
@@ -20,3 +20,4 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/slick.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/slick-theme.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/home.css'); ?>">

@@ -158,7 +158,76 @@
               <input type="text" name="vid_file" class="form-control">
             </div>
             <div class="form-group">
+              <label>Video Description</label>
+              <textarea name="vid_descr" class="form-control" rows="5"></textarea>
+            </div>
+            <div class="form-group">
               <input type="hidden" name="prod_id" id="ProdIds">
+              <button class="btn btn-primary">Save Link</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+ </div>
+
+ <div class="modal fade" id="EdtVidModal" role="dialog">
+    <div class="modal-dialog modal-md">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Video</h4>
+          <a href="">
+            <button type="button" class="close">&times;</button>
+          </a>          
+        </div>
+        <div class="modal-body">
+          <div id="edtVidFrm">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+
+ <div class="modal fade" id="AddVideoPlan" role="dialog">
+    <div class="modal-dialog modal-md">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Video links</h4>
+          <a href="">
+            <button type="button" class="close">&times;</button>
+          </a>          
+        </div>
+        <div class="modal-body">
+          <form action="<?= base_url('auth/admin/Add_plan/add_video_link'); ?>" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label>Upload Thumbnail</label>
+              <input type="file" name="thumbnail" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Video Title</label>
+              <input type="text" name="video_title" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Video Type</label>
+              <select name="video_type" class="form-control">
+                <option value="daily">Daily videos</option>
+                <option value="weekly">Weekly videos</option>
+                <option value="webinar">Webinar</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Video Link</label>
+              <input type="text" name="vid_file" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Video Description</label>
+              <textarea name="vid_descr" class="form-control" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="hidden" name="plan_id" id="PlanId">
               <button class="btn btn-primary">Save Link</button>
             </div>
           </form>

@@ -1,11 +1,11 @@
 <div class="flashMsg">
-            <?php if($msg = $this->session->flashdata("succMsg")): ?>
-                <div class="succMsg"><?= $msg; ?></div>
-            <?php endif; ?>
-            <?php if($msg = $this->session->flashdata("errMsg")): ?>
-                <div class="errMsg"><?= $msg; ?></div>
-            <?php endif; ?>
-        </div>
+    <?php if($msg = $this->session->flashdata("succMsg")): ?>
+        <div class="succMsg"><?= $msg; ?></div>
+    <?php endif; ?>
+    <?php if($msg = $this->session->flashdata("errMsg")): ?>
+        <div class="errMsg"><?= $msg; ?></div>
+    <?php endif; ?>
+</div>
 <div class="footer-wrapper" data-aos="fade-up">
             <div class="container">
                 <div class="footer-block">

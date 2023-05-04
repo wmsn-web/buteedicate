@@ -13,7 +13,7 @@
 	<div class="main-wrapper">
 
         <!-- Header -->
-        <?php include("inc/header.php"); ?>
+        <?php include("inc/header_final.php"); ?> 
         <div class="why-gamma-prep-wrapper bg-white">
             <div class="container">
                 <div class="common-title">
@@ -55,7 +55,7 @@
         </div>
         
 
-        <?php include("inc/footer.php"); ?>
+        <?php include("inc/footer_final.php"); ?>
         <?php include("inc/js.php"); ?>
     </div>
 

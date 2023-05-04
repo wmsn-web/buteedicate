@@ -13,7 +13,7 @@
 	<div class="main-wrapper">
 
         <!-- Header -->
-        <?php include("inc/header.php"); ?>
+        <?php include("inc/header_final.php"); ?> 
         <div class="why-gamma-prep-wrapper bg-white">
             <div class="container">
                 <div class="common-title">
@@ -76,7 +76,10 @@
                                                 <?php endif; ?>
                                                     
                                                 <?php else: ?>
-
+                                                    <label class="ckbox">
+                                                        <input type="checkbox" checked  required>
+                                                        <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a></span>
+                                                    </label>
                                                     <a href="<?= base_url('Login'); ?>">
                                                         <button class="btn btn-primary">Subscribe Now</button>
                                                     </a>
@@ -94,7 +97,7 @@
         </div>
         
 
-        <?php include("inc/footer.php"); ?>
+        <?php include("inc/footer_final.php"); ?>
     </div>
         <?php include("inc/js.php"); ?>
     <script type="text/javascript">

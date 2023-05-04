@@ -117,7 +117,8 @@
 		    	if(intrvl.length > 0)
 		    	{
 		    		$.post("<?= base_url('AjaxController/get_durations'); ?>",{
-		    			intrvl: intrvl
+		    			intrvl: intrvl,
+		    			duration:''
 		    		},function(resp){
 		    			$("#dur").html(resp)
 		    		})

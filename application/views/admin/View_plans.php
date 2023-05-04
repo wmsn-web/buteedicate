@@ -71,6 +71,12 @@
 																	<?php endforeach; ?>
 																<?php endif; ?>
 															</div>
+															<a href="<?= base_url('auth/admin/View_plans/edit/'.$pln['id']); ?>">
+																<button class="btn btn-info btn-sm mt-2"><i class="fas fa-edit"></i> Edit</button>
+															</a>
+															<a href="<?= base_url('auth/admin/View_plans/Videos/'.$pln['id']); ?>">
+																<button class="btn btn-info btn-sm mt-2"><i class="fas fa-video"></i> Add Videos</button>
+															</a>
 														</td>
 													</tr>
 												<?php endforeach; ?>

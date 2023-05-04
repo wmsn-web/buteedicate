@@ -25,6 +25,7 @@ class Course extends CI_controller
 		$data['prods'] = $this->SiteModel->get_product_by_slug($slug);
 		$data['fetrs'] = $this->SiteModel->get_prod_features($data['prods']['id']);
 		$data['ebooks'] = $this->AdminPanelModel->get_all_ebooks($data['prods']['id']);
+		$data['vids'] = $this->AdminPanelModel->check_video_exists($data['prods']['id']);
 		$this->load->view("fronts/my_course_details",$data);
 	}
 

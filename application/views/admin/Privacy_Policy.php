@@ -58,10 +58,7 @@
 		<?php include("inc/footer.php"); ?>
 		<?php include("inc/dash_js.php"); ?>
 		<script type="text/javascript">
-			
 			CKEDITOR.replace( 'editor1',{height: 400} );
-
-
 		</script>
 	</body>
 </html>

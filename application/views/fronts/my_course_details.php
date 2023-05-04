@@ -13,7 +13,7 @@
 	<div class="main-wrapper">
 
         <!-- Header -->
-        <?php include("inc/header.php"); ?>
+        <?php include("inc/header_final.php"); ?> 
         <div class="why-gamma-prep-wrapper bg-white">
             <div class="container">
                 <div class="row">
@@ -36,6 +36,21 @@
                                             <li><?= $fet['name']; ?></li>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
+                                </ul> 
+                                <ul class="profile_links mt-5">
+                                    <?php if(!empty($ebooks)): ?>
+                                        <li><a href="<?= base_url('my-account/ebooks/'.urlencode(base64_encode($prods['prod_slug']))); ?>">Ebooks</a></li>
+                                    <?php endif; ?>
+                                    <?php if($prods['community_access']==1): ?>
+                                        <li><a href="<?= base_url('my-account/community/'.urlencode(base64_encode($prods['prod_slug']))); ?>">Community Access</a></li>
+                                    <?php endif; ?>
+                                    <?php if(!empty($prods['saminar_day'])): ?>
+                                        <li><a href="<?= base_url('my-account/seminars/'.urlencode(base64_encode($prods['prod_slug']))); ?>">12 Seminar link</a></li>
+                                    <?php endif; ?>
+                                    <?php if($vids > 0): ?>
+                                        <li><a href="<?= base_url('my-account/course-videos/'.urlencode(base64_encode($prods['prod_slug']))); ?>">Course Videos</a></li>
+                                    <?php endif; ?>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -123,27 +138,29 @@
                                         </a>
                                     </div>
                                 <?php else: ?>
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <div class="card">
                                             <div class="card-body">
                                                 <h5>Get online appointment</h5>
                                                 <hr>
                                                 <form action="<?= base_url('my-account/course/submit_appoint'); ?>" method="post">
-                                                    <div class="form-group">
-                                                        <label>Select Date</label>
-                                                        <input type="date" name="dates" class="form-control">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Select Time</label>
-                                                        <input type="time" name="times" class="form-control">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Appointment for (10-60minutes)</label>
-                                                        <input type="text" name="appoint_for" class="form-control">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="hidden" name="user_id" value="<?= $user_id; ?>">
-                                                        <button class="btn btn-primary btn-block">Apply</button>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3">
+                                                            <label>Select Date</label>
+                                                            <input type="date" name="dates" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label>Select Time</label>
+                                                            <input type="time" name="times" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label>Appointment for (10-60minutes)</label>
+                                                            <input type="text" name="appoint_for" class="form-control">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <input type="hidden" name="user_id" value="<?= $user_id; ?>">
+                                                            <button class="btn btn-primary btn-block mt-3">Apply</button>
+                                                        </div>
                                                     </div>
                                                 </form>
                                             </div>
@@ -158,7 +175,7 @@
         </div>
         
 
-        <?php include("inc/footer.php"); ?>
+        <?php include("inc/footer_final.php"); ?>
         <?php include("inc/js.php"); ?>
         
     </div>

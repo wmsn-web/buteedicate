@@ -3,7 +3,7 @@
     <script src="<?= base_url(); ?>assets/js/popper.min.js"></script>
     <script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?= base_url(); ?>assets/js/slick.js"></script>
-    <script src="<?= base_url(); ?>assets/js/aos.js"></script>
+    <script src="<?= base_url(); ?>assets/js/wow.min.js"></script>
     <!-- Internal Data tables -->
         <script src="<?= base_url(); ?>admin_assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
         <script src="<?= base_url(); ?>admin_assets/plugins/datatable/js/dataTables.dataTables.min.js"></script>
@@ -30,10 +30,28 @@
             AOS.init();
 
             $(".flashMsg").fadeOut(8000);
+
+            <?php if($msgs = $this->session->flashdata("errMsgUn")): ?>
+                $("#erMsg").html("<?= $msgs; ?>");
+                $("#unsubsPaypal").modal('show');
+            <?php endif; ?>
+            <?php if($msgs = $this->session->flashdata("succMsgUn")): ?>
+                $("#suMsg").html("<?= $msgs; ?>");
+                $("#unsubsSuccess").modal('show');
+            <?php endif; ?>
         })
         function showHire()
         {
             $("#hire").modal('show');
+        }
+
+        function unsubs_paypal()
+        {
+            $("#unsubsPaypal").modal('show');
+        }
+        function unsubs_email()
+        {
+            $("#emailModal").modal('show');
         }
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->

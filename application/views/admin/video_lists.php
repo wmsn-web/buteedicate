@@ -53,6 +53,7 @@
 													<video controls poster="<?= base_url('uploads/vid_thumb/'.$vids['thumbnail']); ?>">
 														<source src="<?= $vids['vid_file']; ?>" type="">
 													</video>
+													<button onclick="edt_video('<?= $vids['id']; ?>')" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
 													<button onclick="del_video('<?= $vids['id']; ?>')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
 												</div>
 											</div>
@@ -84,6 +85,16 @@
 				{
 					location.href = "<?= base_url('auth/admin/Add_contents/del_vids/'); ?>"+id;
 				}
+			}
+
+			function edt_video(id)
+			{
+				$.post("<?= base_url('auth/admin/AjaxController/edt_videos'); ?>",{
+					id: id
+				},function(resp){
+					$("#edtVidFrm").html(resp);
+					$("#EdtVidModal").modal('show');
+				})
 			}
 		</script>
 		

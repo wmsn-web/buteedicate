@@ -22,6 +22,7 @@ class Seminars extends CI_controller
 		$user_id = $this->session->userdata("userId");
 		$data['usr'] = $this->SiteModel->get_user_by_id($user_id);
 		$data['mcorse'] = $this->SiteModel->get_mcorse_dates($user_id,$data['prods']['id']);
+		$data['vids'] = $this->AdminPanelModel->check_video_exists($data['prods']['id']);
 		if(empty($data['mcorse']))
 		{
 			return redirect(base_url('my-account/my-courses'));
