@@ -134,19 +134,19 @@
                                 </div>
                                 <div class="cont_form mt-5">
                                     <form>
-                                        <div class="form-group mb-5">
+                                        <div class="form-group mb-1">
                                             <label>Your Name</label>
                                             <input type="text" name="name" class="form-control">
                                         </div>
-                                        <div class="form-group mb-5">
+                                        <div class="form-group mb-1">
                                             <label>Your Name</label>
                                             <input type="text" name="name" class="form-control">
                                         </div>
-                                        <div class="form-group mb-5">
+                                        <div class="form-group mb-1">
                                             <label>Your Name</label>
                                             <textarea name="name" class="form-control" rows="5"></textarea>
                                         </div>
-                                        <div class="form-group mb-5">
+                                        <div class="form-group mb-1">
                                             <label class="ckbox">
                                                 <input type="checkbox" required>
                                                 <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a></span>
