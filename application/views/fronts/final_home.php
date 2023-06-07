@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </section>
-            <section class="sec_4 wow slideInDown" data-wow-duration="1s" data-wow-delay=".2s">
+            <!--section class="sec_4 wow slideInDown" data-wow-duration="1s" data-wow-delay=".2s">
                 <div class="container_header">
                     <div class="row aos-init" data-aos="fade-bottom" data-aos-duration="600">
                         <div class="col-md-3 mt-5">
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section-->
 
 
             
