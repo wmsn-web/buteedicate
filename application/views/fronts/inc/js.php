@@ -27,11 +27,12 @@
     <script src="<?= base_url(); ?>assets/js/custom.js"></script>
     <script>
         $(document).ready(function(){
-            AOS.init();
+            //AOS.init();
 
             $(".flashMsg").fadeOut(8000);
 
             <?php if($msgs = $this->session->flashdata("errMsgUn")): ?>
+                $("#erms").removeClass("hide");
                 $("#erMsg").html("<?= $msgs; ?>");
                 $("#unsubsPaypal").modal('show');
             <?php endif; ?>
@@ -52,6 +53,19 @@
         function unsubs_email()
         {
             $("#emailModal").modal('show');
+        }
+        function chkEmail(vals)
+        {
+            if(vals == 0)
+            {
+                $("#payemail").removeClass("hide");
+                $("#pe").attr("required",true);
+            }
+            else
+            {
+                $("#payemail").addClass("hide");
+                $("#pe").attr("required",false);
+            }
         }
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->

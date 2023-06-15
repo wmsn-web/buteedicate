@@ -44,10 +44,12 @@ class Membership_plans extends CI_controller
 
 	public function payment_ipn()
 	{
+		
 		$file = file_get_contents("./ipn.txt");
 		$ipndatax = json_decode($file);
 		$ipndata = json_decode(json_encode($ipndatax),TRUE);
 		//print_r($ipndata);
+
 		$txn = explode("_",$ipndata['txn_type']);
 		//if($txn[0] == "subscr")
 		if($ipndata['txn_type'] == "subscr_payment" || $ipndata['txn_type'] == "subscr_signup")
@@ -105,18 +107,19 @@ class Membership_plans extends CI_controller
                 	$this->db->delete("user_subscriptions");
                 }
 
-                //$this->db->insert("payments",$data);
+                $this->db->insert("payments",$data);
 
                 $this->db->where("ipn_track_id",$ipndata['ipn_track_id']);
                 $chk = $this->db->get("user_subscriptions")->num_rows();
                 if($chk == 0)
                 {
-                    //$this->db->insert("user_subscriptions",$subs);
+                    $this->db->insert("user_subscriptions",$subs);
                 }
             }
 		}
+		
 
-		return redirect(base_url());
+		return redirect(base_url('my-account/my-subscription'));
 	}
 
 	public function cancel_subs()

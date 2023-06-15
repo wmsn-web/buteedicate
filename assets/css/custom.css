@@ -433,6 +433,9 @@ img.center{
 	padding-top: 20px;
 	padding-bottom: 10px;
 }
+	.mobimg {
+	    width: 315px;
+	}
 }
 .tx-22{
 	font-size: 22px !important;
@@ -559,7 +562,8 @@ img.center{
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0.3rem;
+    border-radius: 12px;
+    box-shadow: 2px 2px 15px #000;
     outline: 0;
 }
 .modal-header {
@@ -604,6 +608,19 @@ height: 200px;border-radius: 10px;text-align: center;display: flex;flex-directio
 	box-shadow: 2px 2px 15px #ccc;
 	border-radius: 20px 20px 0 0;
 	position: relative;
+}
+.prod_box_subs{
+	width: 100%;
+	padding: 0;
+	box-shadow: 2px 2px 15px #ccc;
+	border-radius: 20px 20px 0 0;
+	position: relative;
+}
+.prod_box_subs .btm{
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	width: 100%;
 }
 .prod_box .btm{
 	position: absolute;
@@ -668,6 +685,9 @@ height: 200px;border-radius: 10px;text-align: center;display: flex;flex-directio
 }
 .ht-250{
 	height: 250px;
+}
+.ht-450{
+	height: 450px;
 }
 a.blank_link{
 	text-decoration: none;
@@ -1024,8 +1044,8 @@ a .cors_block:hover{
 }
 .container_header {
     width: 100%;
-    padding-right: 95px;
-    padding-left: 95px;
+    padding-right: 15px;
+    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -1051,6 +1071,67 @@ a .cors_block:hover{
 	    margin-right: auto;
 	    margin-left: auto;
 	    border-top: solid 1px #ccc;
+	}
+}
+.tx-11{
+	font-size: 11px !important;
+}
+.tx-12{
+	font-size: 12px !important;
+}
+.tx-20{
+	font-size: 20px !important;
+}
+.mobimg{
+	width: 450px;
+}
+.hide{
+	display: none;
+}
+
+
+
+
+
+
+
+
+@media (min-width: 576px){
+	.container_header {
+	    max-width: 540px;
+	}
+}
+@media (min-width: 768px){
+	.container_header {
+	    max-width: 720px;
+	}
+}
+@media (min-width: 992px){
+	.container_header {
+	    max-width: 960px;
+	}
+}
+@media (min-width: 1200px){
+	.container_header {
+	    max-width: 1200px;
+	}
+}
+@media (min-width: 1680px){
+	.container_header {
+	    max-width: 1200px;
+	}
+}
+@media (min-width: 1920px){
+	.container_header {
+	    max-width: 1920px;
+	}
+	.home_banner{
+		height: 877px;
+	}
+}
+@media only  screen and (max-width: 991px){
+	.mobimg{
+		width: 315px;
 	}
 }
 

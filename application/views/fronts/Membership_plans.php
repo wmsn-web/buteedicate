@@ -26,14 +26,14 @@
                                 <?php $features = $this->AdminPanelModel->get_plan_features($pln['id']);
                                     $prd = $this->AdminPanelModel->get_plan_products($pln['id']); ?>
                                 <div class="col-md-3 mt-3">
-                                    <div class="prod_box">
+                                    <div class="prod_box_subs">
                                         <div class="prod_img">
                                             <h5><?= $pln['plan_title']; ?></h5>
                                         </div>
                                         <div class="prod_title">
                                             <h4>&#8364;<?= $pln['price']; ?>/ <?= full_durations($pln['intervals'],$pln['duration']); ?></h4>
                                         </div>
-                                        <div class="prod_body ht-250">
+                                        <div class="prod_body ht-450">
                                             <b>Features Included</b><br>
                                             <?php if(!empty($features)): ?>
                                                     <?php foreach($features as $fet): ?>
@@ -42,7 +42,7 @@
                                                 <?php endif; ?>
                                                 <br>
                                             <b class="mt-2">Course Included</b>
-                                            <ul class="prod_fetr">
+                                            <ul class="prod_fetr mb-3">
                                                 <?php if(!empty($prd)): ?>
                                                     <?php foreach($prd as $pr): ?>
                                                         <?php $prods = $this->AdminPanelModel->get_product_by_id($pr['prod_id']); ?>
@@ -50,39 +50,59 @@
                                                     <?php endforeach; ?>
                                                 <?php endif; ?>
                                             </ul>
-                                            <div class="text-center btm">
+                                            <div class="btm">
                                                 <?php if($this->session->userdata("userId")): ?>
                                                 <?php $chkPlan = $this->SiteModel->is_plan_active($this->session->userdata("userId"),$pln['id']); ?>
                                                 <?php $subcr = $this->SiteModel->is_user_usbscr($this->session->userdata("userId")); ?>
                                                 <?php if($chkPlan > 0): ?>
-                                                    <button onclick="undubscribes('<?= $subcr['paypal_subscr_id']; ?>')" class="btn btn-warning">Unsubscribe</button>
+                                                    <div class="container-fluid">
+                                                        <label class="ckbox">
+                                                            <input type="checkbox" name="tc" id="pl__<?= $pln['id']; ?>">
+                                                            <span>I acknowledge and accept the <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a>. I accept that for digital products the right to refund is partially or fully waived.</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="text-center mt-2">
+                                                        <button onclick="undubscribes('<?= $subcr['paypal_subscr_id']; ?>','<?= $pln['id']; ?>')" class="btn btn-warning">Unsubscribe</button>
+                                                    </div>
                                                 <?php else: ?>
                                                     <?php if(!empty($subcr)): ?>
-                                                        <label class="ckbox">
-                                                            <input type="checkbox" id="pl__<?= $pln['id']; ?>" name="tc" checked>
-                                                            <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</span></a>
-                                                        </label><br><br>
-                                                        <button onclick="upgradeSubs('<?= $pln['id']; ?>','<?= $subcr['paypal_subscr_id']; ?>')" class="btn btn-primary">Subscribe Now</button>
+                                                        <div class="container-fluid">
+                                                            <label class="ckbox">
+                                                                <input type="checkbox" id="pl__<?= $pln['id']; ?>" name="tc">
+                                                                <span>I acknowledge and accept the <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a>. I accept that for digital products the right to refund is partially or fully waived.</span>
+                                                            </label><br><br>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <button onclick="upgradeSubs('<?= $pln['id']; ?>','<?= $subcr['paypal_subscr_id']; ?>')" class="btn btn-primary">Subscribe Now</button><br>
+                                                            <small class="text-danger">You'll be redirected to PayPal after clicking the button</small>
+                                                        </div>
                                                     <?php else: ?>
-                                                        <label class="ckbox">
-                                                            <input type="checkbox" name="tc" checked id="pl__<?= $pln['id']; ?>">
-                                                            <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</span></a>
-                                                        </label><br><br>
-                                                        <button onclick="subscribes('<?= $pln['id']; ?>','<?= $pln['plan_slug']; ?>')" class="btn btn-primary">Subscribe Now</button>
-                                                        <a href="<?= base_url('membership-plans/subscribe/'.$pln['plan_slug']); ?>">
-                                                            
-                                                        </a>
+                                                        <div class="container-fluid">
+                                                            <label class="ckbox">
+                                                                <input type="checkbox" name="tc" id="pl__<?= $pln['id']; ?>">
+                                                                <span>I acknowledge and accept the <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a>. I accept that for digital products the right to refund is partially or fully waived.</span>
+                                                            </label><br><br>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <button onclick="subscribes('<?= $pln['id']; ?>','<?= $pln['plan_slug']; ?>')" class="btn btn-primary">Subscribe Now</button><br>
+                                                            <small class="text-danger">You'll be redirected to PayPal after clicking the button</small>
+                                                        </div>
                                                     <?php endif; ?>
                                                 <?php endif; ?>
                                                     
                                                 <?php else: ?>
-                                                    <label class="ckbox">
-                                                        <input type="checkbox" checked  required>
-                                                        <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a></span>
-                                                    </label>
-                                                    <a href="<?= base_url('Login'); ?>">
-                                                        <button class="btn btn-primary">Subscribe Now</button>
-                                                    </a>
+                                                    <div class="container-fluid">
+                                                        <label class="ckbox">
+                                                            <input type="checkbox" name="tc" id="pl__<?= $pln['id']; ?>">
+                                                            <span>I acknowledge and accept the <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a>. I accept that for digital products the right to refund is partially or fully waived.</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <a href="javascript:void(0)" onclick="showLogin()">
+                                                            <button class="btn btn-primary">Subscribe Now</button>
+                                                        </a><br>
+                                                        <small class="text-danger">You'll be redirected to PayPal after clicking the button</small>
+                                                    </div>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
@@ -99,8 +119,19 @@
 
         <?php include("inc/footer_final.php"); ?>
     </div>
+    <?php include("inc/userModal.php"); ?>
         <?php include("inc/js.php"); ?>
     <script type="text/javascript">
+        <?php if($erms = $this->session->flashdata("showModl")): ?>
+            $(document).ready(function(){
+                $("#logMsg").html("<?= $erms; ?>");
+                $("#LoginModal").modal('show');
+            });
+        <?php endif; ?>
+        function showLogin()
+        {
+            $("#LoginModal").modal('show');
+        }
         function upgradeSubs(plan_id,subscr_id)
         {
             if($("#pl__"+plan_id).is(':checked'))
@@ -127,12 +158,19 @@
                 alert("Please accept Terms & Conditions");
             }
         }
-        function undubscribes(subscr_id)
+        function undubscribes(subscr_id,plan_id)
         {
-            var res = confirm("Are you sure to  unsubscription plan? Existing plan will be deactivated. Please click OK to peoceed or Cancel");
-            if(res == true)
+            if($("#pl__"+plan_id).is(':checked'))
             {
-                location.href = "<?= base_url('Unsubscription/index/'); ?>"+subscr_id;
+                var res = confirm("Are you sure to  unsubscription plan? Existing plan will be deactivated. Please click OK to peoceed or Cancel");
+                if(res == true)
+                {
+                    location.href = "<?= base_url('Unsubscription/index/'); ?>"+subscr_id;
+                }
+            }
+            else
+            {
+                alert("Please accept Terms & Conditions");
             }
         }
     </script>

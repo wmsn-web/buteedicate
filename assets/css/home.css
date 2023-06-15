@@ -68,7 +68,7 @@
 }
 .header_text{
     width: 100%;
-    padding: 130px 0;
+    padding: 120px 0;
 }
 .header_text h1{
     font-weight: 900;
@@ -235,6 +235,10 @@
     padding: 20px;
 }
 @media only  screen and (max-width: 991px){
+    .header_text {
+        width: 100%;
+        padding: 60px 0;
+    }
     .container_header {
         width: 100%;
         padding-right: 15px;
@@ -268,6 +272,55 @@
     .custom-nav li.socials{
         padding-left: 0px;
         padding-top: 6px;
+    }
+}
+
+@media (min-width: 576px){
+    .container_header {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    .container_header {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px){
+    .container_header {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px){
+    .container_header {
+        max-width: 1200px;
+    }
+    .header_text {
+        width: 100%;
+        padding: 83px 0;
+    }
+}
+@media (min-width: 1680px){
+    .container_header {
+        max-width: 1680px;
+    }
+    .home_banner{
+        height: 795px;
+    }
+    .header_text {
+        width: 100%;
+        padding: 160px 0;
+    }
+}
+@media (min-width: 1920px){
+    .container_header {
+        max-width: 1920px;
+    }
+    .home_banner{
+        height: 877px;
+    }
+    .header_text {
+        width: 100%;
+        padding: 198px 0;
     }
 }
 

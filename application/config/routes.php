@@ -13,6 +13,7 @@ $route['Login'] = "main/Login";
 $route['Register'] = "main/Register";
 $route['Register/submitReg'] = "main/Register/submitReg";
 $route['Login/ProcessLogin'] = "main/Login/ProcessLogin";
+$route['Login/ProcessLogin_forBuy'] = "main/Login/ProcessLogin_forBuy";
 $route['Products/buynow/(:any)'] = "main/Products/buynow/$1";
 $route['Logout'] = "main/Logout";
 

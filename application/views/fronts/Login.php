@@ -54,7 +54,7 @@
                                             <button class="btn btn-primary btn-block">Login</button>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <a href="<?= base_url('Register'); ?>">Don't have an account register here.</a>
+                                            <a class="nav-link" href="<?= base_url('Register'); ?>">Don't have an account create from here.</a>
                                         </div>
                                     </div>
                                 </form>

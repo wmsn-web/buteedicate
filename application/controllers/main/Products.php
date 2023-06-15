@@ -10,11 +10,14 @@ class Products extends CI_controller
 		$this->load->library('paypal_lib'); 
 	}
 
-	public function index()
+	public function index() 
 	{
 		$data['all_products'] = $this->SiteModel->get_all_products();
+		$data['all_plans'] = $this->SiteModel->get_all_plans();
 		$this->load->view("fronts/Products",$data); 
 	}
+
+
 	public function details($slug)
 	{
 		$data['alp'] = $this->SiteModel->get_product_by_slug($slug);

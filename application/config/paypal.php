@@ -15,11 +15,13 @@
 |  paypal_lib_currency_code string   Currency code. 
 */ 
  
-$config['sandbox'] = TRUE; // FALSE for live environment 
+$config['sandbox'] = FALSE; // FALSE for live environment 
  
-$config['business'] = 'sb-ute3h22344887@business.example.com'; 
+//$config['business'] = 'sb-ute3h22344887@business.example.com'; 
+//$config['business'] = 'sb-wwf8t25911796@business.example.com';
+$config['business'] = 'info@byteducate.com'; 
  
-$config['paypal_lib_currency_code'] = 'USD'; 
+$config['paypal_lib_currency_code'] = 'EUR'; 
  
 // Where is the button located at? (optional) 
 $config['paypal_lib_button_path'] = 'assets/img/'; 

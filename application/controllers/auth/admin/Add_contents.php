@@ -120,8 +120,8 @@ class Add_contents extends CI_controller
 		$config['allowed_types'] = 'pdf'; 
 		$config['remove_spaces'] = TRUE;
 		$config['encrypt_name'] = false;
-		$fileName = mt_rand(00000000,99999999);
-		$config['file_name'] = make_under($alp['prod_slug']).'_'.$fileName;
+		//$fileName = mt_rand(00000000,99999999);
+		//$config['file_name'] = make_under($alp['prod_slug']).'_'.$fileName;
 		$this->load->library('upload', $config);
 
 		if (!$this->upload->do_upload('filenames'))

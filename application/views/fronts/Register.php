@@ -18,7 +18,7 @@
                     <div class="rowx justify-content-center">
                         <div class="formbx">
                             <div class="header">
-                                <h4>Register</h4>
+                                <h4>Create an account</h4>
                             </div>
                             <div class="bx-body">
                                 <?php if($err = $this->session->flashdata("err")): ?>

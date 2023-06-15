@@ -88,7 +88,7 @@ class Unsubscription extends CI_controller
 		$gt = $this->db->get("users");
 		if($gt->num_rows() == 0)
 		{
-			$this->session->set_flashdata("errMsgUn","Email Address not registered with us. Please enter Registered Email Address.");
+			$this->session->set_flashdata("errMsgUn","Email address not registered with us. Please enter registered email address.");
 			return redirect(back());
 		}
 		else

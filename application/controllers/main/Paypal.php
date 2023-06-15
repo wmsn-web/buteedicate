@@ -71,7 +71,7 @@ class Paypal extends CI_Controller{
         $txt = $dt;
         fwrite($myfile, $txt);
         fclose($myfile);
-
+        
         $txn = explode("_",$ipndata['txn_type']);
         //if($txn[0] == "subscr")
         if($ipndata['txn_type'] == "subscr_cancel")
@@ -143,6 +143,7 @@ class Paypal extends CI_Controller{
                     $this->db->insert("user_subscriptions",$subs);
                 }
             }
-        } 
+        }
+        
     } 
 }

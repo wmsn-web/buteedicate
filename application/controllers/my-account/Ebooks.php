@@ -35,9 +35,21 @@ class Ebooks extends CI_controller
 	{
 		$name = base64_decode(urldecode($codes));
 		$file = "./uploads/ebooks/".$name;
+		//$file_url = www.example.com/pdffolder/$pdfname;
+		header('Content-Type: application/pdf');
+		header("Content-Transfer-Encoding: Binary");
+		header("Content-disposition: attachment; filename=".$name);
+		readfile($file);
+		/*
 		header("Content-type: application/pdf");
 		header("Content-Disposition: attachment; filename=\"$name\"");
     	header('Content-Length: ' . filesize($name));
 		readfile($file);
+		*/
+		?>
+			<script type="text/javascript">
+				//window.open("<?= base_url('uploads/ebooks/'.$name); ?>");
+			</script>
+		<?php
 	}	
 }

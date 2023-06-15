@@ -40,4 +40,34 @@ class Login extends CI_controller
 			return redirect(back());
 		}
 	}
+
+	public function ProcessLogin_forBuy()
+	{
+		$email = $this->input->post("email");
+		$pass = $this->input->post("password");
+		$this->db->where("email",$email);
+		$chk = $this->db->get("users");
+		if($chk->num_rows() > 0)
+		{
+			$row = $chk->row();
+			if(password_verify($pass, $row->password))
+			{
+				$this->session->set_userdata("userId",$row->id);
+				$this->session->set_flashdata("succMsg","Successfully logged in");
+				return redirect(back());
+			}
+			else
+			{
+				$this->session->set_flashdata("errMsg","Invalid Password!");
+				$this->session->set_flashdata("showModl","Invalid Password!");
+				return redirect(back());
+			}
+		}
+		else
+		{
+			$this->session->set_flashdata("errMsg","Email Address not registered!");
+			$this->session->set_flashdata("showModl","Email Address not registered!");
+			return redirect(back());
+		}
+	}
 }

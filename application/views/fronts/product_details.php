@@ -33,11 +33,11 @@
                         <div class="text-left mt-5">
                             <?php if(!$this->session->userdata("userId")): ?>
                                 <label class="ckbox">
-                                    <input type="checkbox" checked  required>
-                                    <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a></span>
+                                    <input type="checkbox"  required>
+                                    <span>I acknowledge and accept the <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a>. I accept that for digital products the right to refund is partially or fully waived.</span>
                                 </label><br>
-                                <a href="<?= base_url('Login'); ?>">
-                                    <button class="btn btn-primary">Buynow</button>
+                                <a href="javascript:void(0)" onclick="showLogin()">
+                                    <button class="btn btn-primary">Buy Now</button>
                                 </a>
                             <?php else: ?>
                                 <?php $checkProd = $this->SiteModel->check_my_course_exists($this->session->userdata("userId"),$alp['id']); ?>
@@ -47,10 +47,10 @@
                                     </a>
                                 <?php else: ?>
                                     <label class="ckbox">
-                                        <input type="checkbox" name="tc" checked id="ap__<?= $alp['id']; ?>">
-                                        <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a></span>
+                                        <input type="checkbox" name="tc" id="ap__<?= $alp['id']; ?>">
+                                        <span>I acknowledge and accept the <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a>. I accept that for digital products the right to refund is partially or fully waived.</span>
                                     </label><br><br>
-                                    <button onclick="buyprod('<?= $alp['id']; ?>','<?= $alp['prod_slug']; ?>')" class="btn btn-primary">Buynow</button>
+                                    <button onclick="buyprod('<?= $alp['id']; ?>','<?= $alp['prod_slug']; ?>')" class="btn btn-primary">Buy Now</button>
                                     <a href="<?= base_url('Products/buynow/'.$alp['prod_slug']); ?>">
                                         
                                     </a>
@@ -97,8 +97,19 @@
 
         <?php include("inc/footer_final.php"); ?>
     </div>
+    <?php include("inc/userModal.php"); ?>
         <?php include("inc/js.php"); ?>
     <script type="text/javascript">
+        <?php if($erms = $this->session->flashdata("showModl")): ?>
+            $(document).ready(function(){
+                $("#logMsg").html("<?= $erms; ?>");
+                $("#LoginModal").modal('show');
+            });
+        <?php endif; ?>
+        function showLogin()
+        {
+            $("#LoginModal").modal('show');
+        }
         function buyprod(id,slug)
         {
             if($("#ap__"+id).is(':checked'))
@@ -110,6 +121,7 @@
                 alert("Please accept Terms & Conditions");
             }
         }
+        
     </script>
 
 </body>

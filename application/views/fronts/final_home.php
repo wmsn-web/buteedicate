@@ -19,9 +19,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="header_text">
-                            <h1>CONQUER THE MARKETS</h1>
-                            <h3> and archive financial<br> independence</h3>
-                            <button class="span_btn">Click here & Start learning today</button>
+                            <h1>Archive financial independence & freedom</h1>
+                            <h3> Learn how to trade financial assets<br> to conquer the markets. We will teach and get you there.</h3>
+                            <button class="span_btn">CLICK HERE & START TODAY</button>
                         </div>
                         <div class="header_text">
                             <h5>Welcome to<br>
@@ -44,11 +44,11 @@
                     <div class="row alligns-items-center">
                         <div class="col-md-6 wow slideInLeft" data-wow-duration="1s" data-wow-delay=".2s">
                             <div class="chat_img">
-                                <img src="<?= base_url('assets/img/baner/02.png'); ?>" class="img-responsive ">
+                                <img src="<?= base_url('assets/img/baner/02.png'); ?>" class="mobimg ">
                                 <span class="bg_circle">
-                                    <img src="<?= base_url('assets/img/baner/el22.png'); ?>" class="back_img">
+                                    <img src="<?= base_url('assets/img/baner/el22.png'); ?>" class="back_img mobimg">
                                 </span>
-                                <br><br><br><br><br><br>
+                                <br><br>
                             </div>
                         </div>
                         <div class="col-md-6 wow slideInRight" data-wow-duration="1s" data-wow-delay=".2s">
@@ -66,12 +66,12 @@
                     </div>
                 </div>
             </section>
-            <section class="sec_3">
+            <section class="sec_3" id="edu">
                 <div class="container_header"> 
                     <div class="row alligns-items-center">
                         <div class="col-md-6 wow slideInLeft" data-wow-duration="1s" data-wow-delay=".2s">
                             <div class="sec_3_text">
-                                <h3>"Understanding the market<br> & Volume / News Trading"</h3>
+                                <h3>"Community Support &<br> Breakdown Analysis"</h3>
                                 <span>
                                     <img src="<?= base_url('assets/img/baner/line.png'); ?>" alt="bars" class="img-responsive">
                                 </span>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="col-md-6 wow slideInRight" data-wow-duration="1s" data-wow-delay=".2s">
                             <div style="background: url('<?= base_url('assets/img/baner/r_circle.png'); ?>'); background-repeat: no-repeat; background-position:left ; background-size: cover;">
-                                <img src="<?= base_url('assets/img/baner/mob.png'); ?>" class="img-responsive mt-4">
+                                <img src="<?= base_url('assets/img/baner/mob.png'); ?>" class="mobimg mt-4">
                             </div>
                         </div>
                     </div>
@@ -139,17 +139,17 @@
                                             <input type="text" name="name" class="form-control">
                                         </div>
                                         <div class="form-group mb-1">
-                                            <label>Your Name</label>
-                                            <input type="text" name="name" class="form-control">
+                                            <label>Email address</label>
+                                            <input type="text" name="email" class="form-control">
                                         </div>
                                         <div class="form-group mb-1">
-                                            <label>Your Name</label>
-                                            <textarea name="name" class="form-control" rows="5"></textarea>
+                                            <label>Write your message</label>
+                                            <textarea name="message" class="form-control" rows="5"></textarea>
                                         </div>
-                                        <div class="form-group mb-1">
+                                        <div class="form-group mb-3 mt-3">
                                             <label class="ckbox">
                                                 <input type="checkbox" required>
-                                                <span>  I accept all <a target="_blank" href="<?= base_url('terms-and-conditions'); ?>">terms & conditions</a> (gtc) - <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a></span>
+                                                <span>I acknowledge and accept the <a href="<?= base_url('privacy-policy'); ?>" target="_blank">data policy</a>.</span>
                                             </label>
                                         </div>
                                         <div class="form-group text-center">

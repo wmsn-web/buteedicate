@@ -1,7 +1,7 @@
 <?php $uri = $this->uri->segment(1); ?> 
 <?php  ?>
 <div class="header-wrapper">
-            <div class="container_header">
+            <div class="container">
                 <nav class="navbar navbar-expand-lg gamma-header">
                     <a href="<?= base_url(); ?>" class="navbar-brand custom-logo">
                         <img src="<?= base_url(); ?>assets/img/baner/navbarlogo1.png" alt="Logo">
@@ -34,7 +34,7 @@
                             <?php endif; ?>
                                 
                             <li class="nav-item <?php if($uri == ''){ echo ''; } ?>">
-                                <a class="nav-link" href="#">Education</a>
+                                <a class="nav-link" href="<?= base_url('#edu'); ?>">Education</a>
                                 
                             </li>
                             <li class="nav-item <?php if($uri == 'Products'){ echo 'active'; } ?>">
