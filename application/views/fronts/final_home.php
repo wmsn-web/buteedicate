@@ -21,7 +21,9 @@
                         <div class="header_text">
                             <h1>Archive financial independence & freedom</h1>
                             <h3> Learn how to trade financial assets<br> to conquer the markets. We will teach and get you there.</h3>
-                            <button class="span_btn">CLICK HERE & START TODAY</button>
+                            <a href="<?= base_url('Register'); ?>">
+                                <button class="span_btn cp">CLICK HERE & START TODAY</button>
+                            </a>
                         </div>
                         <div class="header_text">
                             <h5>Welcome to<br>
@@ -60,7 +62,9 @@
                                     </span>
                                     <p>Successful trading depends on knowledge, experience  and psychology. All education is based on the simple  fundamentals of the market. Click here or on the picture  to get insight on market structures and analysis based on our education.</p>
                                 </div>
-                                <button class="sm_black_btn">More Information</button>
+                                <a href="<?= base_url('education/understanding-the-market-and-Volume-news-trading'); ?>">
+                                    <button class="sm_black_btn cp">More Information</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -77,7 +81,9 @@
                                 </span>
                                 <p>Successful trading depends on knowledge, experience  and psychology. All education is based on the simple  fundamentals of the market. Click here or on the picture  to get insight on market structures and analysis based on our education.</p>
                             </div>
-                            <button class="sm_black_btn">More Information</button>
+                            <a href="<?= base_url('education/community-support-and-breakdown-analysis'); ?>">
+                                <button class="sm_black_btn cp">More Information</button>
+                            </a>
                         </div>
                         <div class="col-md-6 wow slideInRight" data-wow-duration="1s" data-wow-delay=".2s">
                             <div style="background: url('<?= base_url('assets/img/baner/r_circle.png'); ?>'); background-repeat: no-repeat; background-position:left ; background-size: cover;">

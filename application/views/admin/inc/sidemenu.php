@@ -2,10 +2,10 @@
 		<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 		<aside class="app-sidebar sidebar-scroll ">
 			<div class="main-sidebar-header">
-				<a class=" desktop-logo logo-light" href="<?= base_url(); ?>/admin/"><img src="<?= base_url(); ?>assets/images/logo.png" class="main-logo" alt="logo"></a>
-				<a class="desktop-logo logo-dark" href="<?= base_url(); ?>/admin/"><img src="<?= base_url(); ?>assets/images/logo.png" class="main-logo dark-theme" alt="logo"></a>
-				<a class="logo-icon mobile-logo icon-light" href="<?= base_url(); ?>/admin/"><img src="<?= base_url(); ?>assets/images/logo.png" class="logo-icon" alt="logo"></a>
-				<a class="logo-icon mobile-logo icon-dark" href="<?= base_url(); ?>/admin/"><img src="<?= base_url(); ?>assets/images/logo.png" class="logo-icon dark-theme" alt="logo"></a>
+				<a class=" desktop-logo logo-light" href="<?= base_url(); ?>/admin/"><img src="<?= base_url(); ?>assets/img/favicon.png" class="main-logo" alt="logo"></a>
+				<a class="desktop-logo logo-dark" href="<?= base_url(); ?>/admin/"><img src="<?= base_url(); ?>assets/img/favicon.png" class="main-logo dark-theme" alt="logo"></a>
+				<a class="logo-icon mobile-logo icon-light" href="<?= base_url(); ?>/admin/"><img src="<?= base_url(); ?>assets/img/favicon.png" class="logo-icon" alt="logo"></a>
+				<a class="logo-icon mobile-logo icon-dark" href="<?= base_url(); ?>/admin/"><img src="<?= base_url(); ?>assets/img/favicon.png" class="logo-icon dark-theme" alt="logo"></a>
 			</div>
 			<div class="main-sidebar-body circle-animation "> 
 
@@ -62,6 +62,9 @@
 						</ul>
 						
 					</li>
+					<li class="slide">
+						<a class="side-menu__item" href="<?= base_url('auth/admin/Contact_form_data'); ?>"><i class="side-menu__icon fas fa-clipboard"></i><span class="side-menu__label">Contact Form Data</span></a>
+					</li>
 					
 					
 					<li><h3>Settings</h3></li>
@@ -70,6 +73,7 @@
 						<ul class="slide-menu">
 							
 							<li><a class="slide-item" href="<?= base_url('auth/admin/About_Us'); ?>">About Us</a></li>
+							<li><a class="slide-item" href="<?= base_url('auth/admin/Company_contacts'); ?>">Company Contacts</a></li>
 							<li><a class="slide-item" href="<?= base_url('auth/admin/Terms_Condition'); ?>">Terms & Conditions</a></li>
 							<li><a class="slide-item" href="<?= base_url('auth/admin/Privacy_Policy'); ?>">Privacy Policy</a></li>
 							

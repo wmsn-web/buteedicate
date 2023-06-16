@@ -686,6 +686,9 @@ height: 200px;border-radius: 10px;text-align: center;display: flex;flex-directio
 .ht-250{
 	height: 250px;
 }
+.ht-350{
+	height: 350px;
+}
 .ht-450{
 	height: 450px;
 }
@@ -1133,6 +1136,11 @@ a .cors_block:hover{
 	.mobimg{
 		width: 315px;
 	}
+}
+
+.new_card .card{
+	border-radius: 20px;
+	box-shadow: 2px 2px 15px #848A8B;
 }
 
 

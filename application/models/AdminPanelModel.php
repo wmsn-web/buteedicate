@@ -209,4 +209,17 @@ class AdminPanelModel extends CI_Model
 		$data = $this->db->get("email_subscribers")->result_array();
 		return $data;
 	}
+
+	public function get_Contacts()
+	{
+		$data = $this->db->get("company_contacts")->row_array();
+		return $data;
+	}
+
+	public function get_all_form_data()
+	{
+		$this->db->order_by("id","DESC");
+		$data = $this->db->get("contact_forms")->result_array();
+		return $data;
+	}
 }

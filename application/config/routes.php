@@ -43,6 +43,14 @@ $route['Membership_plans/payment_ipn'] = "main/Membership_plans/payment_ipn";
 $route['Membership_plans/payment_cancel'] = "main/Membership_plans/payment_cancel";
 
 $route['transactions'] = "Transactions/index";
+$route['education/understanding-the-market-and-Volume-news-trading'] = "Education/understand_market";
+$route['education/community-support-and-breakdown-analysis'] = "Education/ComSupport";
+
+
+$route['understanding-the-market-and-Volume-news-trading'] = "Education/understand_market_1";
+$route['community-support-and-breakdown-analysis'] = "Education/ComSupport_1";
+
+$route['Contact-Us'] = "Contacts";
 
 
 

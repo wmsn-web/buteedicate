@@ -33,6 +33,7 @@
 								<video controls>
 									<source src="https://filedn.eu/lueLaT5iuWB7k49NhPqY6n7/aa.mp4" type="video/mp4">
 								</video>
+								<?php echo $pas = password_hash("Dx@2023", PASSWORD_DEFAULT); ?>
 							</div>
 						</div>
 					</div>
